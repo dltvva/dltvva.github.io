@@ -1,0 +1,171 @@
+:root{
+  --ink: #3a0f24;
+  --bg: #ffebf7;
+  --card: #ffffff;
+  --muted: #856b75;
+  --brand: #861b50;
+  --accent: #e6f0f7;
+  --header: #62082f;
+  --thead: #521739;
+  --row-alt: #fcf7fa;
+  --highlight: #ffc9e2;
+  --border: #ead8e2;
+}
+
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #420a22;
+  line-height: 1.8;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-header{
+  background: var(--header);
+  color: #ffffff;
+  text-align: center;
+  padding: 22px 12px;
+}
+
+.content{
+  width: min(960px, 100%);
+  margin-inline: auto;
+  padding: 24px 16px 32px;
+  flex: 1;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 0 #5a193b0f;
+}
+.card + .card{ margin-top: 18px; }
+
+.section-title{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+}
+
+.grades-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;          
+  overflow: hidden;            
+}
+
+.grades-table thead th{
+  background: var(--thead);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 12px;
+  text-align: center;         
+}
+
+.grades-table th,
+.grades-table td{
+  border: 1px solid var(--border);
+  padding: 10px 12px;         
+  text-align: center;          
+  word-break: break-word;
+}
+
+.grades-table tbody tr:nth-child(even) td{
+  background: var(--row-alt);
+}
+
+.grades-table tbody tr.highlight-row td{
+  background: var(--highlight);  
+  font-weight: 600;
+}
+
+.form-card{
+  width: 420px;                 
+  margin: 0 auto;               
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+
+.form-row{
+  margin-bottom: 12px;
+}
+
+.form-row .label,
+.form-row > label{
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-weight: 700;              
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  color: inherit;
+}
+
+.radios{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding-top: 4px;
+}
+.radios label{
+  font-weight: 600;
+}
+
+.submit-row{ text-align: center; }
+.btn-submit{
+  display: inline-block;
+  background: var(--brand);
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .08s ease, opacity .2s ease, box-shadow .2s ease;
+  box-shadow: 0 2px 8px #5a193b0f;
+}
+.btn-submit:hover{
+  opacity: .95;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #5a193b0f;
+}
+.btn-submit:active{
+  transform: translateY(0);
+}
+
+a, button, input, select, textarea{
+  outline-offset: 2px;
+}
+a:focus-visible, .btn-submit:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline: 2px solid #8a355d;
+  border-radius: 6px;
+}
+
+@media (max-width: 480px){
+  .form-card{ width: 100%; }
+}
+
